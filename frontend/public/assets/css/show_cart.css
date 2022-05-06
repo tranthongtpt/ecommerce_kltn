@@ -1,0 +1,153 @@
+body{
+    font-size: 1.6rem !important;
+}
+body .site-content{
+    min-height: 300px;
+}
+.box-big{
+    padding: 2rem 0;
+}
+.box-big .order-heading{
+    font-size: 30px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+.box-big .box-small{
+    border: 1px solid #000;
+    border-radius: 16px;
+    padding: 3rem 3rem;
+}
+.grid-show-cart{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -9px;
+    margin-right: -9px;
+    padding: 0;
+    position: relative;
+    float: none;
+}
+.box-big .order-title{
+    display: block;
+    border: 1px solid #000;
+    border-radius: 16px;
+    padding: 0.7rem 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+}
+/* table */
+.box-big .table{
+    margin: 1rem 0;
+}
+.table{
+    width: 100%;
+    border-spacing: 0;
+    background: #d9d9d9;
+    border-radius: 16px;
+}
+.table thead>tr th {
+    font-weight: 500;
+    background-color: var(--bridge-blue);
+    color: var(--white-color);
+}
+
+.text--left {
+    text-align: left;
+}
+.text--right{
+    text-align: right;
+}
+
+.table td, .table th {
+    padding: 10px 20px;
+}
+.table tbody tr:not(:nth-child(2n)) td {
+    background-color: #d9d9d9;
+}
+.box-big .table tfoot td {
+    text-align: left;
+    background-color: #fff!important;
+}
+.box-big .table tfoot td:first-child {
+    border: 0.5px solid #d9d9d9!important;
+    border-left: 1px solid #d9d9d9!important;
+    border-right: none!important;
+}
+.box-big .table td:last-child {
+    text-align: right;
+}
+/* footer  */
+.footer{
+    background: var(--bridge-blue);
+    color: var(--white-color);
+}
+.footer .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+   gap: 1.5rem;
+}
+.footer .box-container h1{
+    font-size: 4rem;
+    margin-top: 0%;
+}
+.footer .box-container .box .font-in-box{
+    font-size: 2rem;
+    text-transform: none;
+
+}
+.footer .box-container h3{
+   font-size: 2.2rem;
+   color: var(--black);
+   padding: 1rem 0;
+}
+.footer .box-container .box a{
+   display: block;
+   font-size: 1.4rem;
+   color: var(--white-color);
+   padding: 1rem 0;
+}
+.footer .box-container .box i{
+   color: var(--green);
+   padding-right: 0.5rem;
+}
+.footer .box-container .box a i{
+   color: var(--green);
+   padding-right: 0.5rem;
+}.footer .box-container .box a:hover i{
+   padding-right: 2rem;
+}
+.footer .box-container .box .map{
+    width: 100%;
+}
+.footer .share{
+   padding: 1rem 0;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+}
+.imglogo{
+   max-width: 6rem;
+   max-height: 6rem;
+   padding: 0 0.5rem;
+   background-size: cover !important;
+   border-radius: 50% !important;
+}
+.imageChange{
+   max-width: 20rem;
+}
+.footer .share .imglogo:hover{
+   cursor: pointer;
+}
+.footer .credit{
+   border-top: var(--border);
+   margin-top: 2rem;
+   padding: 0 1rem;
+   padding-top: 2.5rem;
+   font-size: 2rem;
+   color: var(--white-color);
+   text-align: center;
+}
+.footer .credit p{
+    font-size: 1.3rem;
+   text-transform: none;
+}

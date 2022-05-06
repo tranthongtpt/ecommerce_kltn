@@ -1,0 +1,137 @@
+:root{
+    --white-color:#fff;
+    --black-color:#000;
+    --text-color:#333;
+    --primary-color:#159EEC;
+    --border-color:#dbdbdb;
+    --green:#27ae60;
+    --dark-color:#219150;
+    --red:#f33060;
+    --light-color:#666;
+    --header-height:120px;
+    --navbar-height:34px;  
+    --header-with-search-height:calc(var(--header-height)- var(--navbar-height));
+    --border:.1rem solid rgba(0,0,0,.5);
+    --border-hover:.1rem solid var(--black);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    --bridge-blue:#3054b7;
+    --mau-backgroundheader:linear-gradient(0,#0DD297,#04D26F);
+}
+
+*{
+    outline: none; 
+    border:none;
+    text-decoration: none;
+    transition:all .2s linear;
+    margin:0; 
+    padding:0;
+    text-transform: none;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+
+}
+
+/* color */
+.col-black{
+    color: var(--black-color);
+}
+.col-bule{
+    color: var(--bridge-blue);
+}
+.cl-white{
+    color:var(--white-color);
+}
+.cl-green{
+    color: #5dac46;
+}
+.col-red{
+    background: var(--red) !important;
+}
+
+/* end */
+@keyframes fadeIn{
+    form{
+        opacity: 0;
+    } to{
+        opacity: 1;
+    }
+}
+@keyframes growth{
+    form{
+        transform: scale(var(--growth-from));
+    }to{
+        transform: scale(var(--growth-to));
+    }
+}
+.value-nul{
+    display: none;
+}
+.pd-l{
+    padding-left: 1rem;
+}
+/* base cart */
+.hafl{
+    width: 50% !important;
+}
+.cart-left-section {
+    border-right: 1px solid #d9d9d9;
+}
+.seven-twelfths {
+    width: 58.333% !important;
+}
+.four-twelfths{
+    width: calc(100%/3) !important;
+}
+.five-twelfths {
+    width: 41.666% !important;
+}
+.cursor-point{
+    cursor: pointer;
+}
+.detail-line{
+    height: 1px;
+    background-color: #d8e0e8;
+    width: 100%;
+}
+.divider{
+    margin: 1rem 0;
+    border: none;
+    border-top: 1px solid #d9d9d9;
+    height: 1px;
+}
+.fs-32{
+    font-size: 3.2rem !important;
+}
+.fs-24{
+    font-size: 2.4rem !important;
+}
+.f-w-500{
+    font-weight: 500;
+}
+.fs-16{
+    font-size: 1.6rem !important;
+}
+.l-h-24{
+    line-height: 2.4rem !important;
+}
+.m-t-16{
+    margin-top: 1.6rem !important;
+}
+.m-l-16{
+    margin-left: 1.6rem !important;
+}
+.fl-grow{
+    flex-grow: 1 !important;
+}
+.b-radius-12{
+    border-radius: 1.2rem !important;
+}
+.card{
+    background: #fff;
+    border: 1px solid #b6c0ce;
+}

@@ -1,0 +1,310 @@
+/* header --start */
+.productInfo__header{
+    display: flex;
+    align-items: center;
+    background-color: #f0f2f5;
+    height: 6rem;
+}
+.container-detail{
+    width: 100%;
+    padding: 0 12.5rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+.Breadcrumbs{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 1rem 0;
+    list-style-type: disc !important;
+}
+.Breadcrumbs .Breadcrumbs__item{
+    display: flex;
+    align-items: center;
+    color: #112950;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 20px;
+    opacity: .3;
+    font-size: 1.6rem;
+}
+.productInfo__header .container-detail nav ol li>a{  
+    text-decoration: none !important;
+}
+.Breadcrumbs .Breadcrumbs__item+.Breadcrumbs__item{
+    padding-left: 1rem; 
+}
+.Breadcrumbs__item-active{
+    opacity: 1!important;
+    font-weight: 500;
+}
+/* header --end */
+.grid__cart{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    position: relative;
+    float: none;
+}
+.grid__column{
+    position: relative;
+    box-sizing: border-box;
+    min-height: 1px;
+    vertical-align: top;
+    margin-left: 0!important;
+    margin-right: 0!important;
+    padding: 9px;
+    width: 100%;
+}
+.title-with-actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0 1rem;
+}
+.title-with-actions .title{
+    margin: 0;
+}
+.title{
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    text-transform: none ;
+}
+button, input{
+    overflow: visible;
+    font-size: 100%;
+    font-family: inherit;
+    line-height: 1.15;
+}
+.form-control{
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 12px !important;
+    height: 40px;
+    width: 100%;
+    padding: 5px 20px;
+    transition: all .2s;
+    font-size: 1.6rem !important;
+}
+.payment-method__item{
+    display: flex;
+    align-items: center;
+    border: 1px solid #d9d9d9;
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    transition: all .2s;
+    opacity: .6;
+    font-size: 1.6rem;
+}
+.payment-method__item:hover{
+    border: 1px solid var(--bridge-blue);
+    color: var(--red);
+    opacity: 1;
+}
+/* not la tru ra thang nu con ":last-child" chọn thành phần cuối cùng của thành phần cha. */
+.payment-method__item:not(:last-child){
+    margin-bottom: 1rem;
+}
+.payment-method__item-icon-wrapper{
+    margin: 0 1.5rem;
+}
+.cart-return-text{
+    padding: 1rem 0;
+    text-transform: none ;
+}
+.checkout-btn{
+    border-radius: 16px;
+    height: 55px;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--green);
+    color: var(--white-color);
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+.checkout-btn:hover{
+    background-color: #d9d9d9;
+}
+
+/* ----------------- */
+.checkout_page button{
+    font-family: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+.checkout_page .checkout_content .checkout_box{
+    align-items: flex-start;
+    overflow: hidden;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+.checkout_page .checkout_content>div{
+    /* background-color: #f0f2f5; */
+}
+.checkout_list{
+    width: 67%;
+    padding: 24px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+}
+.checkout_list .checkoutList_header{
+    align-items: center;
+    text-decoration: none;
+}
+.checkout_list .checkoutList_header span{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    color: #112950;
+}
+.checkout_list .checkoutList_header a{
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 20px;
+    color: #0065ff !important;
+    cursor: pointer;
+}
+.checkoutBox_content{
+    overflow: hidden;
+    transition: all .3s;
+}
+.orderItem{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 0;
+}
+.orderItem .orderBanner{
+    width: 72px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+.orderItem .orderBanner img{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.orderItem .orderInfo{
+    margin-left: 16px;
+    flex-direction: row;
+    align-items: flex-start;
+    flex: 1 1;
+    display: block;
+    font-size: 1.6rem;
+}
+.orderItem .orderInfo .order_Name{
+    flex: 3 0;
+    line-height: 24px;
+    font-weight: 500;
+}
+.orderItem .orderInfo .order_Price{
+    color: #0065ff;
+    flex: 1 0;
+}
+.orderItem .orderInfo .order_Quantity{
+    flex: 1 0;
+    line-height: 18px;
+    text-align: center;
+}
+.orderItem .orderInfo .order_Total{
+    flex: 1 0;
+    line-height: 18px;
+    color: #0065ff;
+    text-align: right;
+}
+
+.total_checkout{
+    width: 31%;
+    border-radius: 12px;
+    padding: 24px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+.total_checkout .totalcheckout_header{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    color: #112950;
+    margin-bottom: 22px;
+}
+.total_checkout .totalcheckout_content .totalcheckout_item{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    font-size: 1.6rem;
+}
+.total_checkout .totalcheckout_content .totalcheckout_item p{
+    font-size: 2.4rem;
+}
+.total_checkout .totalcheckout_footer button{
+    width: 100%;
+}
+.total_checkout .totalcheckout_footer button p{
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+/* pc 1024px*/
+@media only screen and (min-width:64em){
+    .orderItem .orderInfo{
+        display: flex;
+    }
+}        
+/* tablet & moblie 1023px - 740px*/
+@media only screen and (max-width:63.9375em) and (min-width:46.25em){
+    .header{
+        display: none;
+    }
+    .productInfo__header{
+        display: none;
+    }
+    .checkout_box {
+        display: block !important;
+    }
+    .checkout_list{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    }
+    .total_checkout{
+        width: 100%;
+    border: none;
+    }
+    .totalcheckout_box-checkout{
+        width: 300px;
+    }
+    .totalcheckout_box-cart{
+        border-radius: 12px;
+        width: 100%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 1.063rem;
+        line-height: 22px;
+        color: #fff;
+    }
+    .container{
+        max-width: 100% !important;
+    }
+}
+/* mobile 739px */
+@media (max-width: 46.1875em){
+    
+}

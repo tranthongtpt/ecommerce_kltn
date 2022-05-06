@@ -1,0 +1,160 @@
+.section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.section .imgBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+.section .imgBx:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(225deg,#e9dce2,#03a9f4);
+    z-index: 1;
+    mix-blend-mode: screen;
+}
+.section .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.section .contentBx{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.section .contentBx .formBx{
+    width: 50%;
+}
+.section .contentBx .formBx h2{
+    color: #0f1011;
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    border-bottom: 0.4rem solid #03a9f4;
+    display: inline-block;
+    letter-spacing: 0.1rem;
+}
+.section .contentBx .formBx .inputBx{
+    margin-bottom: 2rem;
+}
+.section .contentBx .formBx .inputBx span{
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    color: #0f1011;
+    font-weight: 300;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+.section .contentBx .formBx .inputBx input {
+    width: 90%;
+    padding: 1rem 2rem;
+    outline: none;
+    font-weight: 400;
+    border:  1px solid #0f1011;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    color: #0f1011;
+    background: transparent;
+    border-radius: 3rem;
+}
+.section .contentBx .formBx .inputBx input[type="submit"]{
+    background: #03a9f4;
+    color: var(--white-color);
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+.section .contentBx .formBx .remember{
+    margin-bottom: 1rem;
+    color: #0f1011;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+.section .contentBx .formBx .inputBx p{
+    color: #0f1011;
+    font-size: 1.5rem;
+}
+.section .contentBx .formBx .inputBx p a{
+    color: #03a9f4;
+}
+.section .contentBx .formBx .inputBx input[type="submit"]:hover{
+    background: #03a9f4;
+}
+.section .contentBx .formBx h3{
+    color: #0f1011;
+    text-align: center;
+    margin: 8rem 0 1rem;
+    font-weight: 500;
+}
+.section .contentBx .formBx .sci{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: var(--white-color);
+}
+.section .contentBx .formBx .sci li{
+    list-style: none;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(225deg,#03a9f4,#f8f6f7);
+    border-radius: 50%;
+    margin: 0 0.7rem;
+    cursor: pointer;
+}
+.section .contentBx .formBx .sci li:hover{
+    background: #03a9f4;
+}
+/* .section .contentBx .formBx .sci li i{
+    transform: scale(0.5);
+    filter: invert(1);
+} */
+
+@media (max-width:768px){
+    .section .imgBx{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .section .contentBx{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+    .section .contentBx .formBx{
+        width: 100%;
+        padding: 4rem;
+        background: rgba(255 255 255 / 0.9);
+        margin: 5rem;
+    }
+    .section .contentBx .formBx h3{
+        color: #0f1011;
+        text-align: center;
+        margin: 3rem 0 1rem;
+        font-weight: 500;
+    }
+}

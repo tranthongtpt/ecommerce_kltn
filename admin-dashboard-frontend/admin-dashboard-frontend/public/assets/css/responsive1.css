@@ -1,0 +1,16 @@
+
+/* pc 1024px*/
+@media only screen and (min-width:64em){
+    
+}        
+/* tablet & moblie 1023px - 740px*/
+@media only screen and (max-width:63.9375em) and (min-width:46.25em){
+    section{
+        padding:3rem 2rem;
+    }
+    
+}
+/* mobile 739px */
+@media (max-width: 46.1875em){
+    
+}
