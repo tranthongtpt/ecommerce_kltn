@@ -10,6 +10,7 @@ import Loading from "../components/LoadingError/Loading";
 import { PRODUCT_CREATE_REVIEW_RESET } from "../redux/Constants/ProductConstants";
 import moment from "moment"
 
+
 const SingleProduct = ({ history,match }) => {
   const [qty, setQty] = useState(1)
   const [rating, setRating] = useState(0)

@@ -1,0 +1,65 @@
+/* footer --start */
+.footer{
+    background: var(--bridge-blue);
+    color: var(--white-color);
+}
+.footer .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+   gap: 2.5rem;
+   padding: 1.5rem 0;
+}
+.footer .box-container h1{
+    font-size: 4rem;
+    margin-top: 0%;
+}
+.footer .box-container .box .font-in-box{
+    font-size: 2rem;
+    text-transform: none;
+
+}
+.footer .box-container h3{
+   font-size: 3rem;
+   color: var(--black);
+   padding: 1rem 0;
+}
+.footer .box-container .box a{
+   display: block;
+   font-size: 1.8rem;
+   color: var(--white-color);
+   padding: 1rem 0;
+   text-decoration: none;
+}
+.footer .box-container .box i{
+   color: var(--green);
+   padding-right: 0.5rem;
+}
+.footer .box-container .box a i{
+   color: var(--green);
+   padding-right: 0.5rem;
+}.footer .box-container .box a:hover i{
+   padding-right: 2rem;
+}
+.footer .box-container .box .map{
+    width: 100%;
+}
+.imageChange{
+   max-width: 20rem;
+}
+.footer .share .imglogo:hover{
+   cursor: pointer;
+}
+.footer .credit{
+   border-top: var(--border);
+   margin-top: 2rem;
+   padding-top: 2.5rem;
+   font-size: 2rem;
+   color: var(--white-color);
+   text-align: center;
+}
+.footer .credit p{
+   font-size: 1.3rem;
+   text-transform: none;
+   margin-bottom: 0;
+}
+/* footer --end */

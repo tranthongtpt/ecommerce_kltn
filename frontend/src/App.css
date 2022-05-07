@@ -648,3 +648,5 @@ textarea:focus {
   background-color: black;
   border: 1px solid black;
 }
+@import url("./components/css/header.css");
+@import url("./components/css/footer.css");
