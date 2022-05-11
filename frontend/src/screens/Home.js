@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useRef, useState  } from "react";
 import Header from "./../components/Header";
 import Footer from "./../components/Footer";
 import Image1 from "./icon/banner-ads-big.png";
@@ -24,6 +24,12 @@ import { Link } from "react-router-dom";
 import { listProduct } from "../redux/Actions/ProductActions";
 import Loading from "../components/LoadingError/Loading";
 import Message from "../components/LoadingError/Error";
+/////////////
+import { Pagination } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react'
+import 'swiper/swiper.min.css'
+import 'swiper/modules/pagination/pagination.min.css'
+/////////////
 function Home() {
   window.scrollTo(0, 0);
   const dispatch = useDispatch();
@@ -91,111 +97,136 @@ function Home() {
 
         <div className="swiper featured-slider">
           <div className="swiper-wrapper">
-            <div className="swiper-slide box">
-              <div className="image">
-                <img src={banchai} alt="" />
-              </div>
-              <div className="content">
-                <h2 className="productItem_title">
-                  Bàn chải đánh răng P/S chăm sóc chứa muối tr tr hu ji ko
-                </h2>
-                <div className="productItem_original-price"></div>
-                <div className="price">
-                  {" "}
-                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
-                </div>
-                <button className="btn">Thêm vào giỏ hàng</button>
-              </div>
-            </div>
-
-            <div className="swiper-slide box">
-              <div className="image">
-                <img src={dekhang} alt="" />
-              </div>
-              <div className="content">
-                <h2 className="productItem_title">
-                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
-                </h2>
-                <div className="productItem_original-price"></div>
-                <div className="price">
-                  {" "}
-                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
-                </div>
-                <button className="btn">Thêm vào giỏ hàng</button>
-              </div>
-            </div>
-
-            <div className="swiper-slide box">
-              <div className="image">
-                <img src={banchai} alt="" />
-              </div>
-              <div className="content">
-                <h2 className="productItem_title">
-                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối treê
-                </h2>
-                <div className="productItem_original-price"></div>
-                <div className="price">
-                  {" "}
-                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
-                </div>
-                <button className="btn">Thêm vào giỏ hàng</button>
-              </div>
-            </div>
-
-            <div className="swiper-slide box">
-              <div className="image">
-                <img src={banchai} alt="" />
-              </div>
-              <div className="content">
-                <h2 className="productItem_title">
-                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
-                </h2>
-                <div className="productItem_original-price"></div>
-                <div className="price">
-                  {" "}
-                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
-                </div>
-                <button className="btn">Thêm vào giỏ hàng</button>
-              </div>
-            </div>
-
-            <div className="swiper-slide box">
-              <div className="image">
-                <img src={banchai} alt="" />
-              </div>
-              <div className="content">
-                <h2 className="productItem_title">
-                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
-                </h2>
-                <div className="productItem_original-price"></div>
-                <div className="price">
-                  {" "}
-                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
-                </div>
-                <button className="btn">Thêm vào giỏ hàng</button>
-              </div>
-            </div>
-
-            <div className="swiper-slide box">
-              <div className="image">
-                <img src={banchai} alt="" />
-              </div>
-              <div className="content">
-                <h2 className="productItem_title">
-                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
-                </h2>
-                <div className="productItem_original-price"></div>
-                <div className="price">
-                  {" "}
-                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
-                </div>
-                <button className="btn">Thêm vào giỏ hàng</button>
-              </div>
-            </div>
           </div>
+          <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide><div className="swiper-slide box">
+              <div className="image">
+                <img src={banchai} alt="" />
+              </div>
+              <div className="content">
+                <h2 className="productItem_title">
+                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
+                </h2>
+                <div className="productItem_original-price"></div>
+                <div className="price">
+                  {" "}
+                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+                </div>
+                <button className="btn">Thêm vào giỏ hàng</button>
+              </div>
+            </div></SwiperSlide>
+        <SwiperSlide><div className="swiper-slide box">
+              <div className="image">
+                <img src={banchai} alt="" />
+              </div>
+              <div className="content">
+                <h2 className="productItem_title">
+                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
+                </h2>
+                <div className="productItem_original-price"></div>
+                <div className="price">
+                  {" "}
+                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+                </div>
+                <button className="btn">Thêm vào giỏ hàng</button>
+              </div>
+            </div></SwiperSlide>
+        <SwiperSlide>
+        <div className="swiper-slide box">
+              <div className="image">
+                <img src={banchai} alt="" />
+              </div>
+              <div className="content">
+                <h2 className="productItem_title">
+                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
+                </h2>
+                <div className="productItem_original-price"></div>
+                <div className="price">
+                  {" "}
+                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+                </div>
+                <button className="btn">Thêm vào giỏ hàng</button>
+              </div>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide><div className="swiper-slide box">
+              <div className="image">
+                <img src={banchai} alt="" />
+              </div>
+              <div className="content">
+                <h2 className="productItem_title">
+                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
+                </h2>
+                <div className="productItem_original-price"></div>
+                <div className="price">
+                  {" "}
+                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+                </div>
+                <button className="btn">Thêm vào giỏ hàng</button>
+              </div>
+            </div></SwiperSlide>
+        <SwiperSlide><div className="swiper-slide box">
+              <div className="image">
+                <img src={banchai} alt="" />
+              </div>
+              <div className="content">
+                <h2 className="productItem_title">
+                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
+                </h2>
+                <div className="productItem_original-price"></div>
+                <div className="price">
+                  {" "}
+                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+                </div>
+                <button className="btn">Thêm vào giỏ hàng</button>
+              </div>
+            </div></SwiperSlide>
+        <SwiperSlide><div className="swiper-slide box">
+              <div className="image">
+                <img src={banchai} alt="" />
+              </div>
+              <div className="content">
+                <h2 className="productItem_title">
+                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
+                </h2>
+                <div className="productItem_original-price"></div>
+                <div className="price">
+                  {" "}
+                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+                </div>
+                <button className="btn">Thêm vào giỏ hàng</button>
+              </div>
+            </div></SwiperSlide>
+        <SwiperSlide><div className="swiper-slide box">
+              <div className="image">
+                <img src={banchai} alt="" />
+              </div>
+              <div className="content">
+                <h2 className="productItem_title">
+                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
+                </h2>
+                <div className="productItem_original-price"></div>
+                <div className="price">
+                  {" "}
+                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+                </div>
+                <button className="btn">Thêm vào giỏ hàng</button>
+              </div>
+            </div></SwiperSlide>
+      </Swiper>
           <div className="swiper-button-next"></div>
           <div className="swiper-button-prev"></div>
         </div>
+
+
       </section>
       <section className="shop" id="shop">
         <div className="category-list__header">
