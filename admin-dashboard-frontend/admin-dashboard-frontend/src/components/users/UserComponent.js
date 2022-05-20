@@ -75,40 +75,81 @@ const UserComponent = (props) => {
         {
           loading ? <Loading /> : error ? (<Message variant="alert-danger">{error}</Message>)
           :(
-            <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
-            {
-              users.map((user) => (
-                <div className="col" key={user._id}>
-                <div className="card card-user shadow-sm">
-                <div className="card-header">
-                  <img
-                    className="img-md img-avatar"
-                    src="images/user.png"
-                    alt=""
-                  />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title mt-5">{user.name}</h5>
-                  <div className="card-text text-muted">
-                  {
-                    user.isAdmin === true ? (
-                      <p className="m-0">Admin</p>
-                    )
-                    :
-                    (
-                      <p className="m-0">Customer</p>
-                    )
-                  }
-                    <p>
-                      <a href={`mailto:${user.email}`}>{user.email}</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-              ))
-            }
-            </div>
+            // <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
+            // {
+            //   users.map((user) => (
+            //     <div className="col" key={user._id}>
+            //     <div className="card card-user shadow-sm">
+            //     <div className="card-header">
+            //       <img
+            //         className="img-md img-avatar"
+            //         src="images/user.png"
+            //         alt=""
+            //       />
+            //     </div>
+            //     <div className="card-body">
+            //       <h5 className="card-title mt-5">{user.name}</h5>
+            //       <div className="card-text text-muted">
+            //       {
+            //         user.isAdmin === true ? (
+            //           <p className="m-0">Admin</p>
+            //         )
+            //         :
+            //         (
+            //           <p className="m-0">Customer</p>
+            //         )
+            //       }
+            //         <p>
+            //           <a href={`mailto:${user.email}`}>{user.email}</a>
+            //         </p>
+            //       </div>
+            //     </div>
+            //   </div>
+            // </div>
+            //   ))
+            // }
+            // </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">STT</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Role</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Phone Number</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+              {
+                users.map((user) => (
+                  <tr>
+                    <th key={user._id}></th>
+                    <td>{user.name}</td>
+                    <td> <a href={`mailto:${user.email}`}>{user.email}</a></td>
+                    <td>
+                      {
+                        user.isAdmin === true ? (
+                          <p className="m-0">Admin</p>
+                        )
+                        :
+                        (
+                          <p className="m-0">User</p>
+                        )
+                      }
+                    </td>
+                    <td>   
+                      <a data-position="top" data-tooltip="Status" href="/account/{{{this.account_status}}}/{{{this._id}}}" class="{{btnStatus this.account_status}} tooltipped btn btn-small   blue-grey "><i class="material-icons  "></i></a>
+                      <a data-position="top" data-tooltip="Update" href="/account/{{{this._id}}}" class="btn btn-small tooltipped  yellow darken-3 button-radius "><i class="material-icons">system_update_alt</i></a>
+
+                      <a data-position="top" data-tooltip="Update"  data-list="{{this.list_id}}" data-id="{{{this._id}}}" class=" tooltipped waves-effect waves-light btn modal-trigger btn_delete red  {{accType this.accountType}}" href="#modal1"><i class="material-icons">delete</i></a>
+                    </td>
+                  </tr>
+                  ))
+              }
+              </tbody>
+            </table>
           )
         }
           

@@ -25,10 +25,14 @@ import { listProduct } from "../redux/Actions/ProductActions";
 import Loading from "../components/LoadingError/Loading";
 import Message from "../components/LoadingError/Error";
 /////////////
-import { Pagination } from 'swiper'
+import { Pagination,Navigation,History } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react'
 import 'swiper/swiper.min.css'
 import 'swiper/modules/pagination/pagination.min.css'
+// modules styles
+import 'swiper/modules/navigation/navigation.min.css'
+// swiper bundle styles
+import 'swiper/swiper-bundle.min.css'
 /////////////
 function Home() {
   window.scrollTo(0, 0);
@@ -97,133 +101,113 @@ function Home() {
 
         <div className="swiper featured-slider">
           <div className="swiper-wrapper">
-          </div>
           <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide><div className="swiper-slide box">
-              <div className="image">
-                <img src={banchai} alt="" />
-              </div>
-              <div className="content">
-                <h2 className="productItem_title">
-                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
-                </h2>
-                <div className="productItem_original-price"></div>
-                <div className="price">
-                  {" "}
-                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+            spaceBetween={30}
+            slidesPerView={4}
+            
+            history={{
+              key: "slide",
+            }}
+            modules={[History]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+            <div className="swiper-slide box">
+                <div className="image">
+                  <img src={banchai} alt="" />
                 </div>
-                <button className="btn">Thêm vào giỏ hàng</button>
-              </div>
-            </div></SwiperSlide>
-        <SwiperSlide><div className="swiper-slide box">
-              <div className="image">
-                <img src={banchai} alt="" />
-              </div>
-              <div className="content">
-                <h2 className="productItem_title">
-                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
-                </h2>
-                <div className="productItem_original-price"></div>
-                <div className="price">
-                  {" "}
-                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+                <div className="content">
+                  <h2 className="productItem_title">
+                    Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
+                  </h2>
+                  <div className="productItem_original-price"></div>
+                  <div className="price">
+                    {" "}
+                    <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+                  </div>
+                  <button className="btn">Thêm vào giỏ hàng</button>
                 </div>
-                <button className="btn">Thêm vào giỏ hàng</button>
               </div>
-            </div></SwiperSlide>
-        <SwiperSlide>
-        <div className="swiper-slide box">
-              <div className="image">
-                <img src={banchai} alt="" />
-              </div>
-              <div className="content">
-                <h2 className="productItem_title">
-                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
-                </h2>
-                <div className="productItem_original-price"></div>
-                <div className="price">
-                  {" "}
-                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+          </SwiperSlide>
+          <SwiperSlide>
+          <>
+              {products.map((product) => (
+                <div className="swiper-slide box">
+                  <div className="image">
+                    <Link to={`/products/${product._id}`}>
+                      <img src={product.image} alt={product.name} />
+                    </Link>
+                  </div>
+                  <div className="content">
+                    <h2 className="productItem_title">
+                      <p>
+                        <Link to={`/products/${product._id}`}>
+                          {product.name}
+                        </Link>
+                      </p>
+                    </h2>
+                    <div className="productItem_original-price"></div>
+                    <div className="price">
+                      {" "}
+                      <span>0% VND/Sản phẩm</span> <br /> {product.price}{" "}
+                      VND/Sản phẩm{" "}
+                    </div>
+                    {product.countInStocks > 0 ? (
+                      <button
+                        class="btn"
+                        style={{ position: "relative", zindex: "2" }}
+                      >
+                        <Link to={`/products/${product._id}`}>
+                          Xem chi tiết
+                        </Link>
+                      </button>
+                    ) : (
+                      <span>Hết hàng</span>
+                    )}
+                  </div>
                 </div>
-                <button className="btn">Thêm vào giỏ hàng</button>
-              </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide><div className="swiper-slide box">
-              <div className="image">
-                <img src={banchai} alt="" />
-              </div>
-              <div className="content">
-                <h2 className="productItem_title">
-                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
-                </h2>
-                <div className="productItem_original-price"></div>
-                <div className="price">
-                  {" "}
-                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+              ))}
+            </>
+          </SwiperSlide>
+          
+          <SwiperSlide>
+          <div className="swiper-slide box">
+                <div className="image">
+                  <img src={banchai} alt="" />
                 </div>
-                <button className="btn">Thêm vào giỏ hàng</button>
-              </div>
-            </div></SwiperSlide>
-        <SwiperSlide><div className="swiper-slide box">
-              <div className="image">
-                <img src={banchai} alt="" />
-              </div>
-              <div className="content">
-                <h2 className="productItem_title">
-                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
-                </h2>
-                <div className="productItem_original-price"></div>
-                <div className="price">
-                  {" "}
-                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+                <div className="content">
+                  <h2 className="productItem_title">
+                    Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
+                  </h2>
+                  <div className="productItem_original-price"></div>
+                  <div className="price">
+                    {" "}
+                    <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+                  </div>
+                  <button className="btn">Thêm vào giỏ hàng</button>
                 </div>
-                <button className="btn">Thêm vào giỏ hàng</button>
               </div>
-            </div></SwiperSlide>
-        <SwiperSlide><div className="swiper-slide box">
-              <div className="image">
-                <img src={banchai} alt="" />
-              </div>
-              <div className="content">
-                <h2 className="productItem_title">
-                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
-                </h2>
-                <div className="productItem_original-price"></div>
-                <div className="price">
-                  {" "}
-                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+          </SwiperSlide>
+          <SwiperSlide><div className="swiper-slide box">
+                <div className="image">
+                  <img src={banchai} alt="" />
                 </div>
-                <button className="btn">Thêm vào giỏ hàng</button>
-              </div>
-            </div></SwiperSlide>
-        <SwiperSlide><div className="swiper-slide box">
-              <div className="image">
-                <img src={banchai} alt="" />
-              </div>
-              <div className="content">
-                <h2 className="productItem_title">
-                  Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
-                </h2>
-                <div className="productItem_original-price"></div>
-                <div className="price">
-                  {" "}
-                  <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+                <div className="content">
+                  <h2 className="productItem_title">
+                    Bàn chải đánh răng P/S chăm sóc nướu chứa muối tre
+                  </h2>
+                  <div className="productItem_original-price"></div>
+                  <div className="price">
+                    {" "}
+                    <span>28.000 VND/Cây</span> <br /> 28.000 VND/Cây{" "}
+                  </div>
+                  <button className="btn">Thêm vào giỏ hàng</button>
                 </div>
-                <button className="btn">Thêm vào giỏ hàng</button>
               </div>
-            </div></SwiperSlide>
-      </Swiper>
-          <div className="swiper-button-next"></div>
-          <div className="swiper-button-prev"></div>
+          </SwiperSlide>
+
+            </Swiper>
+          </div>
         </div>
 
 
@@ -292,32 +276,54 @@ function Home() {
 
           <div className="Outstanding-Brand__body">
             <div className="Outstanding-Brand-slider">
-              <div className="swiper-container mySwiper">
+              <div className="swiper-container">
                 <div className="swiper-wrapper">
-                  <div className="swiper-slide">
+                  <Swiper
+                    spaceBetween={50}
+                    slidesPerView={5}
+                    navigation={true}   
+                    history={{
+                      key: "slide",
+                    }}
+                    modules={[Navigation, History]}
+                    className="mySwiper"
+                  >
+                  <SwiperSlide data-history="1"><div className="swiper-slide">  
                     <img src={about} alt="" />
                     <h4>Bao Ngan City1</h4>
-                  </div>
-                  <div className="swiper-slide">
+                  </div></SwiperSlide>
+                  <SwiperSlide data-history="Slide 2"><div className="swiper-slide">  
                     <img src={about} alt="" />
                     <h4>Bao Ngan City2</h4>
-                  </div>
-                  <div className="swiper-slide">
+                  </div></SwiperSlide>
+                  <SwiperSlide data-history="3"><div className="swiper-slide">  
                     <img src={about} alt="" />
                     <h4>Bao Ngan City3</h4>
-                  </div>
-                  <div className="swiper-slide">
+                  </div></SwiperSlide>
+                  <SwiperSlide data-history="Slide 4"><div className="swiper-slide">  
                     <img src={about} alt="" />
                     <h4>Bao Ngan City4</h4>
-                  </div>
-                  <div className="swiper-slide">
+                  </div></SwiperSlide>
+                  <SwiperSlide data-history="5"><div className="swiper-slide">  
                     <img src={about} alt="" />
                     <h4>Bao Ngan City5</h4>
-                  </div>
-                  <div className="swiper-slide">
+                  </div></SwiperSlide>
+                  <SwiperSlide data-history="6"><div className="swiper-slide">  
                     <img src={about} alt="" />
-                    <h4>Bao Ngan City6</h4>
-                  </div>
+                    <h4>Bao Ngan City5</h4>
+                  </div></SwiperSlide>
+                  <SwiperSlide data-history="7"><div className="swiper-slide">  
+                    <img src={about} alt="" />
+                    <h4>Bao Ngan City5</h4>
+                  </div></SwiperSlide>
+                  <SwiperSlide data-history="8"><div className="swiper-slide">  
+                    <img src={about} alt="" />
+                    <h4>Bao Ngan City5</h4>
+                  </div></SwiperSlide>
+                  
+                  
+      </Swiper>
+                  
                 </div>
               </div>
             </div>

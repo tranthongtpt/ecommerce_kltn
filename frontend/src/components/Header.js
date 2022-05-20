@@ -95,7 +95,7 @@ const Header = () => {
             <div className="header-with-search">
                 <div id="list-cetagory" className="fas fa-map-marker-alt"></div>
                 <Link to="/">
-                    <img src="/assets/img/logo2.png" alt="bn-logo" /><Link to="/home"></Link>
+                    <img src="/assets/img/pharmacy1.png" alt="bn-logo" /><Link to="/home"></Link>
                 </Link>
                 <form onSubmit={submitHandler} className="search-form">
                     <input type="search" id="search-box"header__navbar placeholder="Bạn đang tìm gì hôm nay..." onChange={(e) => setKeyword(e.target.value)}/>
@@ -151,7 +151,7 @@ const Header = () => {
                         <a href="#">Góc sức khỏe</a>
                     </li>
                     <li>
-                        <a href="#">Blog</a>
+                        <a href="/about">Blog</a>
                     </li>
                     <li>
                         <a href="#">Khuyễn mãi Hot</a>
